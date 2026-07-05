@@ -2,13 +2,13 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 
 async function start() {
   console.log('Starting local in-memory MongoDB server...');
-  // Create an in-memory MongoDB instance with a smaller binary version (4.4.24)
+  // Create an in-memory MongoDB instance compatible with both local development and Render (Debian 12+)
   const mongoServer = await MongoMemoryServer.create({
     instance: {
       dbName: 'medflow'
     },
     binary: {
-      version: '4.4.24'
+      version: '7.0.3'
     }
   });
   
